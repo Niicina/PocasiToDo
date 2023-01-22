@@ -9,7 +9,16 @@
   <ion-content [fullscreen]="true">
 <ion-card>
   <ion-item>
-    {{teplota.temp}}
+    <p>Dnes </p>
+    <!--Datepipe, snazila jsem se o pridani cs, zatim bez uspechu-->
+    <ion-label slot="end">{{dnesniDen | date: "EEE dd MMM YYYY" : 'cs'}} </ion-label>
+ 
+  </ion-item>
+  <ion-item>
+<span>
+      <!--Jsoun oppoved = temp-->
+      {{teplota.temp}}
+</span>
   </ion-item>
 </ion-card>
   </ion-content>
