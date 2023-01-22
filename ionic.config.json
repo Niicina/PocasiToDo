@@ -1,0 +1,7 @@
+{
+  "name": "PocasiToDo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
