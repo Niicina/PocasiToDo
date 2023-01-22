@@ -24,7 +24,7 @@ export class HomePage {
   loadData() {
     this.httpClient.get<any>(`${API_URL}/weather?q=${"Prague"}&appid=${API_KEY}`).subscribe(results => {
       console.log(results);
-      //dostani teploty z vysled
+      //dostani teploty z vysleddku od get - v main polozka temperature
       this.teplota = results['main']
       console.log(this.teplota);
      
