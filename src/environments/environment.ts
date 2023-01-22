@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  API_KEY : '7d94b78a680b8f82d2cd9d32df137398',
-  API_URL : 'https://api.openweathermap.org/data/2.5/'
+  API_URL : 'https://api.openweathermap.org/data/2.5/',
+  API_KEY: '7d94b78a680b8f82d2cd9d32df137398'
 };
 
 /*
@@ -16,3 +16,7 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+
+
+

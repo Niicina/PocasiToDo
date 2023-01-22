@@ -21,6 +21,6 @@ export class HomePage {
   //vyuziti http klienta k dostani odpovedi od API pomocí get, prvni parametr q = jméno města, druhy parametr je api key
   //results log - logování
   loadData() {
-    this.httpClient.get('${API_URL}/weather?q = ${"Prague"}&appid=${API_KEY}').subscribe(results => { console.log(results);})
+    this.httpClient.get(`${API_URL}/weather?q=${"Prague"}&appid=${API_KEY}`).subscribe( results=> { console.log(results);})
   }
 }
