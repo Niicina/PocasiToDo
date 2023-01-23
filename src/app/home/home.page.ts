@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
 import { Icon } from 'ionicons/dist/types/components/icon/icon';
  
 
@@ -36,7 +35,7 @@ export class HomePage {
       this.teplota = results['main']
       this.mesto = results['name']
       console.log(this.teplota);
-      this.pocasiIkona= results ['weather'][1]
+      this.pocasiIkona= results ['weather'][0]
       console.log(this.pocasiDetail);
       //ikona zavisi na tom jake je pocasi - z API
       this.pocasiIkona= `http://openweathermap.org/img/wn/${this.pocasiDetail.icon}@2x.png`
