@@ -8,7 +8,7 @@
 
   <ion-content [fullscreen]="true">
 <ion-card>
-  <ion-item>
+  <ion-item lines="none">
     <p>Dnes </p>
     <!--Datepipe, přidání češtiny-->
     <ion-label slot="end">{{dnesniDen | date: "EEE dd MMM YYYY" : 'cs'}} </ion-label>
@@ -16,8 +16,8 @@
   </ion-item>
   <ion-item>
 <span>
-      <!--Json odpoved = temp-->
-      {{teplota.temp}}
+      <!--Json odpoved = temp, pridani do stupnu celsia-->
+      {{(teplota.temp - 273.15).toFixed(0)}}
 </span>
   </ion-item>
 </ion-card>
