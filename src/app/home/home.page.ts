@@ -2,10 +2,6 @@ import { Component } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { LOCALE_ID } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
-import localeCs from '@angular/common/locales/cs';
-registerLocaleData(localeCs, 'cs');
 
 
 
