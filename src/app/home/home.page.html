@@ -17,8 +17,25 @@
   <ion-item>
 <span>
       <!--Json odpoved = temp, pridani do stupnu celsia-->
-      {{(teplota.temp - 273.15).toFixed(0)}}
+      {{(teplota?.temp - 273.15).toFixed(0)}}
 </span>
+<span>°C</span>
+<!--Nejdou mi nacist zadne obrazky, vyresim nakonec, prozatim vyreseno univerzalni ikonou-->
+<img slot="end" [src]=pocasiIkona > 
+<ion-icon slot= "end" name="cloud"></ion-icon> 
+  </ion-item>
+  <ion-item>
+    <ion-icon name="location"></ion-icon> 
+    <span>{{mesto}}</span>
+  </ion-item>
+</ion-card>
+
+<ion-card>
+  <ion-item>
+    <span>Pocitová teplota</span>
+  </ion-item>
+  <ion-item>
+  <span> Maximální teplota</span>
   </ion-item>
 </ion-card>
   </ion-content>
