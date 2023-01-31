@@ -19,13 +19,14 @@ export class HomePage {
   //promenna teplota
   teplota : any
   dnesniDen = new Date
-  mesto :any
+  mesto = ""
   pocasiIkona : any
   pocasiDetail :any
-  
+  nazev=""
+  loading = true
   
   constructor(public httpClient: HttpClient) {
-    this.loadData() //loaddata pokaždé když jdu an homepage
+    //this.loadData() //loaddata pokaždé když jdu an homepage
   }
 
   
@@ -33,18 +34,18 @@ export class HomePage {
   //vyuziti http klienta k dostani odpovedi od API pomocí get, prvni parametr q = jméno města, druhy parametr je api key
   //results log - logování
   loadData() {
-    this.httpClient.get<any>(`${API_URL}/weather?q=${"Brno"}&appid=${API_KEY}`).subscribe(results => {
+    this.httpClient.get<any>(`${API_URL}/weather?q=${this.mesto}&appid=${API_KEY}`).subscribe(results => {
       console.log(results);
       //dostani teploty z vysledku od get z API - json odpoved 'temp'- v main polozka temperature a logovani
       this.teplota = results['main']
-      this.mesto = results['name']
+      this.nazev = results['name']
       console.log(this.teplota);
       this.pocasiDetail= results ['weather'][0]
       console.log(this.pocasiDetail);
       //ikona zavisi na tom jake je pocasi - z API
       this.pocasiIkona= `http://openweathermap.org/img/wd${this.pocasiDetail.icon}@2x.png`
-     //this.pocasiIkona=this.httpClient.get<any>(`http://openweathermap.org/img/wd${this.pocasiDetail.icon}@2x.png`)
-
+    // this.pocasiIkona=this.httpClient.get<any>(`http://openweathermap.org/img/wd${this.pocasiDetail.icon}@2x.png`)
+      this.loading=false
     })
   }
 }

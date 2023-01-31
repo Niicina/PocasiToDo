@@ -4,17 +4,19 @@
       <ion-label style="font-weight: 400; font: size 1.5em;"> Předpověď počasí</ion-label>
     </div>
     <ion-card>
-      <ion-searchbar class="searchBar" animated="true" placeholder="Vyhledej město"></ion-searchbar>
+      <!--NgModelChange - bude se měnit, bude volat fci loadData pokaždé co je zadáno do searchbaru-->
+      <ion-searchbar [(ngModel)]="mesto" (ngModelChange)="loadData()" class="searchBar" animated="true" placeholder="Vyhledej město"></ion-searchbar>
 
     </ion-card>
-
+    <!--když je loading hotový - po zadání města do searchbaru, načte se obsah-->
+    <div *ngIf = "!loading">
 <ion-card class="cardStyle">
   <ion-item lines="none">
     <p style="font-weight: 500; color: white">Dnes </p>
     <!--Datepipe, přidání češtiny-->
     <ion-label color="light" slot="end">{{dnesniDen | date: "EEE dd MMM YYYY" : 'cs'}} </ion-label>
- 
   </ion-item>
+
   <ion-item>
 <span id="temp">
       <!--Json odpoved = temp, pridani do stupnu celsia-->
@@ -31,6 +33,7 @@
   </ion-item>
 </ion-card>
 
+
 <ion-card class="cardStyle">
   <ion-item>
     <span>Pocitová teplota</span>
@@ -46,4 +49,10 @@
     <span slot= "end">{{(teplota?.temp_min -271.15).toFixed(0)}}</span>
     </ion-item>
 </ion-card>
+
+</div>
+<!--Pokdu ještě není nic načteného-->
+<div *ngIf="loading" class="noData">
+  <img src="../../assets/pozadi1.png">
+</div>
   </ion-content>
