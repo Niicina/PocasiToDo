@@ -3,11 +3,14 @@
     <div style="text-align: center;margin: 10px;">
       <ion-label style="font-weight: 400; font: size 1.5em;"> Předpověď počasí</ion-label>
     </div>
-    <ion-searchbar class="searchBar" animated="true" placeholder="Vyhledej město"></ion-searchbar>
+    <ion-card>
+      <ion-searchbar class="searchBar" animated="true" placeholder="Vyhledej město"></ion-searchbar>
+
+    </ion-card>
 
 <ion-card class="cardStyle">
   <ion-item lines="none">
-    <p>Dnes </p>
+    <p style="font-weight: 500; color: white">Dnes </p>
     <!--Datepipe, přidání češtiny-->
     <ion-label color="light" slot="end">{{dnesniDen | date: "EEE dd MMM YYYY" : 'cs'}} </ion-label>
  
@@ -20,11 +23,11 @@
 <span style="font-size:1.3em">°C</span>
 <!--Nejdou mi nacist zadne obrazky, vyresim nakonec, prozatim vyreseno univerzalni ikonou-->
 <!--<img slot="end" [src]=pocasiIkona>-->
-<ion-icon color="light" slot= "end" name="cloud"></ion-icon> 
+<ion-icon class = "ikonaMrak" color="light" slot= "end" name="cloud" width ="180px" height="180px" ></ion-icon> 
   </ion-item>
   <ion-item>
-    <ion-icon name="location" color="dark"></ion-icon> 
-    <span>{{mesto}}</span>
+    <ion-icon name="location" color="light"></ion-icon> 
+    <span class="barvaMesta">{{mesto}}</span>
   </ion-item>
 </ion-card>
 

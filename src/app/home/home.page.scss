@@ -28,9 +28,8 @@
 
 .searchBar{
   --ion-background-color: #3B9A5C ;
- //background-color:  #3B9A5C ;
+ background-color:  #3B9A5C ;
 color: black;
-border-radius :20px;
 
 }
 //styl cards
@@ -50,6 +49,13 @@ span{
   margin: 5px;
 }
 
+.barvaMesta{
+  color: white;
+}
+
 #barvaIkonalokacePismoDen{
   color: #ddb334
+}
+.ikonaMrak {
+  font-size: 80px;
 }
