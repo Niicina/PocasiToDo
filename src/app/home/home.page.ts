@@ -42,8 +42,8 @@ export class HomePage {
       this.pocasiDetail= results ['weather'][0]
       console.log(this.pocasiDetail);
       //ikona zavisi na tom jake je pocasi - z API
-      //this.pocasiIkona= `http://openweathermap.org/img/wd${this.pocasiDetail.icon}@2x.png`
-     this.pocasiIkona=this.httpClient.get(`http://openweathermap.org/img/wd${this.pocasiDetail.icon}@2x.png`)
+      this.pocasiIkona= `http://openweathermap.org/img/wd${this.pocasiDetail.icon}@2x.png`
+     //this.pocasiIkona=this.httpClient.get<any>(`http://openweathermap.org/img/wd${this.pocasiDetail.icon}@2x.png`)
 
     })
   }

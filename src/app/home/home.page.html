@@ -3,32 +3,32 @@
     <div style="text-align: center;margin: 10px;">
       <ion-label style="font-weight: 400; font: size 1.5em;"> Předpověď počasí</ion-label>
     </div>
-    <ion-searchbar animated="true" placeholder="Animated"></ion-searchbar>
+    <ion-searchbar class="searchBar" animated="true" placeholder="Vyhledej město"></ion-searchbar>
 
 <ion-card class="cardStyle">
   <ion-item lines="none">
     <p>Dnes </p>
     <!--Datepipe, přidání češtiny-->
-    <ion-label slot="end">{{dnesniDen | date: "EEE dd MMM YYYY" : 'cs'}} </ion-label>
+    <ion-label color="light" slot="end">{{dnesniDen | date: "EEE dd MMM YYYY" : 'cs'}} </ion-label>
  
   </ion-item>
   <ion-item>
-<span>
+<span id="temp">
       <!--Json odpoved = temp, pridani do stupnu celsia-->
       {{(teplota?.temp - 273.15).toFixed(0)}}
 </span>
-<span>°C</span>
+<span style="font-size:1.3em">°C</span>
 <!--Nejdou mi nacist zadne obrazky, vyresim nakonec, prozatim vyreseno univerzalni ikonou-->
-<!--<img slot="end" [src]=pocasiIkona>--> 
-<ion-icon slot= "end" name="cloud" color="black"></ion-icon> 
+<!--<img slot="end" [src]=pocasiIkona>-->
+<ion-icon color="light" slot= "end" name="cloud"></ion-icon> 
   </ion-item>
   <ion-item>
-    <ion-icon name="location" color="black"></ion-icon> 
+    <ion-icon name="location" color="dark"></ion-icon> 
     <span>{{mesto}}</span>
   </ion-item>
 </ion-card>
 
-<ion-card>
+<ion-card class="cardStyle">
   <ion-item>
     <span>Pocitová teplota</span>
     <span slot= "end">{{(teplota?.feels_like -271.15).toFixed(0)}}</span>

@@ -25,9 +25,31 @@
 #container a {
   text-decoration: none;
 }
+
+.searchBar{
+  --ion-background-color: #3B9A5C ;
+ //background-color:  #3B9A5C ;
+color: black;
+border-radius :20px;
+
+}
 //styl cards
 .cardStyle{
   border-radius :20px;
   --ion-background-color: #3B9A5C ;
   --color: #3B9A5C ;
+}
+span{
+  color:black;
+  font-weight: 300;
+}
+
+#temp{
+  font-weight:  300;
+  font-size: 4em;
+  margin: 5px;
+}
+
+#barvaIkonalokacePismoDen{
+  color: #ddb334
 }
