@@ -25,7 +25,9 @@
 <span style="font-size:1.3em">°C</span>
 <!--Nejdou mi nacist zadne obrazky, vyresim nakonec, prozatim vyreseno univerzalni ikonou-->
 <!--<img slot="end" [src]=pocasiIkona>-->
-<ion-icon class = "ikonaMrak" color="light" slot= "end" name="cloud" width ="180px" height="180px" ></ion-icon> 
+<!--<ion-icon class = "ikonaMrak" color="light" slot= "end" name="cloud" width ="180px" height="180px" ></ion-icon> -->
+<img src="../../assets/output-onlinegiftools.gif">
+
   </ion-item>
   <ion-item>
     <ion-icon name="location" color="light"></ion-icon> 
@@ -38,21 +40,25 @@
   <ion-item>
     <span>Pocitová teplota</span>
     <span slot= "end">{{(teplota?.feels_like -271.15).toFixed(0)}}</span>
+    <div slot="end">°C</div>
   </ion-item>
   <ion-item>
   <span> Maximální teplota</span>
   <span slot= "end">{{(teplota?.temp_max -271.15).toFixed(0)}}</span>
+  <div slot="end">°C</div>
 
   </ion-item>
   <ion-item>
     <span> Minimální teplota</span>
-    <span slot= "end">{{(teplota?.temp_min -271.15).toFixed(0)}}</span>
-    </ion-item>
+    <span slot="end"> {{(teplota?.temp_min -271.15).toFixed(0)}}</span>
+    <div slot="end">°C</div>
+
+  </ion-item>
 </ion-card>
 
 </div>
 <!--Pokdu ještě není nic načteného-->
 <div *ngIf="loading" class="noData">
-  <img src="../../assets/pozadi1.png">
+  <img src="../../assets/pozadi2 (2).png">
 </div>
   </ion-content>

@@ -1,0 +1,30 @@
+
+.barvaPozadi{
+    --ion-background-color: #3B9A5C ;
+    --color: #3B9A5C ;
+  }
+
+  .image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+
+  .text{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .tlacitko{
+    color:black;
+  }
+
+  .upravaTextu{
+font-size: 1.3em;
+font-weight: 500;
+  }
