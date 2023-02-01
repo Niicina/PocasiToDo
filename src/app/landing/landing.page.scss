@@ -1,7 +1,7 @@
 
 .barvaPozadi{
-    --ion-background-color: #3B9A5C ;
-    --color: #3B9A5C ;
+    --ion-background-color: white ;
+    --color: white ;
   }
 
   .image{
@@ -17,14 +17,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #3B9A5C;
   }
 
   .tlacitko{
-    color:black;
+    color:white;
   }
 
   .upravaTextu{
 font-size: 1.3em;
 font-weight: 500;
+color:black;
   }
