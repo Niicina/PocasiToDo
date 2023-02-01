@@ -1,9 +1,15 @@
-  
+  <ion-header>
+<ion-toolbar>
+  <ion-title>Počasí</ion-title>
+  <ion-buttons slot = "start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+  </ion-buttons>
+</ion-toolbar>
+  </ion-header>
   
   
   <ion-content [fullscreen]="true">
     <div style="text-align: center;margin: 10px;">
-      <ion-label style="font-weight: 400; font: size 1.5em;"> Aktuální počasí</ion-label>
     </div>
     <ion-card>
       <!--NgModelChange - bude se měnit, bude volat fci loadData pokaždé co je zadáno do searchbaru-->
