@@ -1,10 +1,21 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Přidej ToDo</ion-title>
-    <ion-icon name="close" slot="end" size="large" (click)="dismis()"></ion-icon>
+    <ion-icon name="close" slot="end" size="large" class="ion-padding" (click)="dismis()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+<ion-card>
+  <ion-item>
+<ion-textarea [(ngModel)]="taskName" placeholder="Zdejte text"></ion-textarea>
+  </ion-item>
 
+
+
+
+
+  <ion-button class="ion-margin" expand="block" (click)="AddTask()"> Přidej ToDo</ion-button>
+  
+</ion-card>
 </ion-content>

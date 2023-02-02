@@ -9,29 +9,7 @@ import { AddNewTaskPage } from './../add-new-task/add-new-task.page';
 })
 export class TodoPage implements OnInit {
 
-  todoList = [{
-    itemName: 'PrvniToDo',
-    itemDueDate: '11-01-2022',
-    itemPriority: "vysoka",
-    itemCategory: 'Prace'
-
-  },
-  {
-    itemName: 'DruheToDo',
-    itemDueDate: '12-01-2022',
-    itemPriority: "nizka",
-    itemCategory: 'Skola'
-
-  },
-  {
-    itemName: 'TretiToDo',
-    itemDueDate: '08-01-2022',
-    itemPriority: "stredni",
-    itemCategory: 'Osobni'
-
-  }
-
-] as any;
+  todoList = [] as any
 
 dnes: number = Date.now()
 
@@ -42,8 +20,15 @@ dnes: number = Date.now()
     const modal = await this.modalCtrl.create({
       component:AddNewTaskPage
     })
-  return await modal.present()
-  }
+    
+    //pridani prvku newtaskobj do array todoList
+    modal.onDidDismiss().then(newTaskObj => {
+      console.log(newTaskObj.data);
+      this.todoList.push(newTaskObj.data)
+    })
+    
+    return await modal.present()
+    }
 
   ngOnInit() {
   }

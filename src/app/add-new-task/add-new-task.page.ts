@@ -11,8 +11,8 @@ export class AddNewTaskPage implements OnInit {
 
   
   taskName: any
-  taskPriority: any
 
+  taskObject:any
 
   constructor(public modalCtrl: ModalController) { }
 
@@ -20,8 +20,14 @@ export class AddNewTaskPage implements OnInit {
   }
 //mwtoda pro zavreni modalniho okna - pro krizek :)
   async dismis(){
-  await this.modalCtrl.dismiss()
+  await this.modalCtrl.dismiss(this.taskObject)
   }
 
+  //metoda pro pridani todo
+AddTask(){
 
+  this.taskObject = ({itemName: this.taskName})
+  this.dismis()
+
+}
 }
