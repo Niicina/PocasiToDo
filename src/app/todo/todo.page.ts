@@ -35,6 +35,10 @@ dnes: number = Date.now()
 
   constructor() { }
 
+  addTask(){
+
+  }
+
   ngOnInit() {
   }
 
