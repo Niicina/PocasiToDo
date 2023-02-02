@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'todo',
     loadChildren: () => import('./todo/todo.module').then( m => m.TodoPageModule)
   },
+  {
+    path: 'add-new-task',
+    loadChildren: () => import('./add-new-task/add-new-task.module').then( m => m.AddNewTaskPageModule)
+  },
 ];
 
 @NgModule({
