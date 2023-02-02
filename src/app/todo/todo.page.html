@@ -4,9 +4,29 @@
     <ion-buttons slot = "start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+
+    <ion-item lines = "none">
+      <ion-label style = "font-weight: 400; font-size: 2em;">
+        Dnes
+        <p style="font-weight: 400; color: #3B9A5C ;">{{dnes | date: "EEE dd MMM YYYY" : 'cs'}}</p>
+      </ion-label>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <!--iterace let itemů todolistu-->
+<ion-card  *ngFor="let item of todoList " >
+  <ion-card-header>
+    <ion-card-subtitle [style.color]="item.itemPriority === 'high' ? 'red' : (item.itemPriority === 'low' ? 'green' : 'orange')">
+      {{item.itemCategory}}
+    </ion-card-subtitle>
 
+    <ion-item>
+      <ion-icon name = "ellipse"></ion-icon>
+      <ion-label>{{item.itemName}}</ion-label>
+    </ion-item>
+  </ion-card-header>
+
+</ion-card>
 </ion-content>
