@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { AddNewTaskPage } from './../add-new-task/add-new-task.page';
 
 @Component({
   selector: 'app-todo',
@@ -33,10 +35,14 @@ export class TodoPage implements OnInit {
 
 dnes: number = Date.now()
 
-  constructor() { }
+  constructor(public modalCtrl:ModalController) { }
 
-  addTask(){
-
+  //přesměrování po kliknutí na button na stránku pro přidání todo
+  async addTask(){
+    const modal = await this.modalCtrl.create({
+      component:AddNewTaskPage
+    })
+  return await modal.present()
   }
 
   ngOnInit() {
