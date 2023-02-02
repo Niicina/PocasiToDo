@@ -6,11 +6,8 @@
     </ion-buttons>
 
     <ion-item lines = "none">
-      <ion-label style = "text-align: center;margin: 10px;">
-        
-
+      <ion-label>
         ToDo
-        <p style="font-weight: 400; color: #3B9A5C ;">{{dnes | date: "EEE dd MMM YYYY" : 'cs'}}</p>
       </ion-label>
     </ion-item>
   </ion-toolbar>
@@ -33,11 +30,7 @@
       <ion-label>{{item.itemName}}</ion-label>
     </ion-item>
   </ion-card-header>
-<ion-card-content>
-  <ion-label>
-    Termín: {{item.itemDueDate | date: "dd MMM YYYY" : 'cs'}}
-  </ion-label>
-</ion-card-content>
+
 
 
 <ion-row>
@@ -52,10 +45,12 @@
   </ion-item>
 </ion-row>
 </ion-card>
+
 <!--pridani floating buttonu-->
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
 <ion-fab-button (click) ="addTask()">
   <ion-icon name="add"></ion-icon>
+  
 </ion-fab-button>
 </ion-fab>
 </ion-content>
