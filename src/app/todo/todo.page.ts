@@ -8,22 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class TodoPage implements OnInit {
 
   todoList = [{
-    itemName: 'PrvnitoDo',
+    itemName: 'PrvniToDo',
     itemDueDate: '11-01-2022',
     itemPriority: "vysoka",
     itemCategory: 'Prace'
 
   },
   {
-    itemName: 'PrvnitoDo',
+    itemName: 'DruheToDo',
     itemDueDate: '12-01-2022',
-    itemPriority: "mala",
+    itemPriority: "nizka",
     itemCategory: 'Skola'
 
   },
   {
-    itemName: 'PrvnitoDo',
-    itemDueDate: '14-01-2022',
+    itemName: 'TretiToDo',
+    itemDueDate: '08-01-2022',
     itemPriority: "stredni",
     itemCategory: 'Osobni'
 
