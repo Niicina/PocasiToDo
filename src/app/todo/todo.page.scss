@@ -7,7 +7,12 @@ p{
 }
 
 .pozadi{
-    background-color: aquamarine;
-    color: aquamarine;
-    
-}
+    border-radius :20px;
+    --ion-background-color: #3B9A5C ;
+    --color: #3B9A5C ;
+  }
+
+  .pismo{
+    --color: white ;
+    color: white;
+  }

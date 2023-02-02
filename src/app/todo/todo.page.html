@@ -15,15 +15,13 @@
 
 <ion-content  [fullscreen]="true">
   <!--iterace let itemů todolistu-->
-<ion-card  *ngFor="let item of todoList ;  let i =index" class="ion-margin" >
+<ion-card   *ngFor="let item of todoList"   class="pozadi" >
   <ion-card-header>
-    <ion-card-subtitle >
-      {{item.itemCategory}}
-    </ion-card-subtitle>
+
 
     <ion-item>
     
-      <ion-label>{{item.value.itemName}}</ion-label>
+      <ion-label class="pismo">{{item.value.itemName}}</ion-label>
     </ion-item>
   </ion-card-header>
 
@@ -31,8 +29,8 @@
 
 <ion-row>
   <ion-item button (click)="delete(item.key)">
-    <ion-icon name="trash-outline"></ion-icon>
-    <p>Odstranit</p>
+    <ion-icon color="light" name="trash-outline"></ion-icon>
+    <p class="pismo">Odstranit</p>
   </ion-item>
 </ion-row>
 </ion-card>
