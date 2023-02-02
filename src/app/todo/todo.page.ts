@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { AddNewTaskPage } from './../add-new-task/add-new-task.page';
+import { TodosService } from './../todos.service';
 
 @Component({
   selector: 'app-todo',
@@ -13,7 +14,9 @@ export class TodoPage implements OnInit {
 
 dnes: number = Date.now()
 
-  constructor(public modalCtrl:ModalController) { }
+  constructor(public modalCtrl:ModalController, public todosService: TodosService) {
+    this.getAllTask()
+   }
 
   //přesměrování po kliknutí na button na stránku pro přidání todo
   async addTask(){
@@ -23,16 +26,22 @@ dnes: number = Date.now()
     
     //pridani prvku newtaskobj do array todoList
     modal.onDidDismiss().then(newTaskObj => {
-      console.log(newTaskObj.data);
-      this.todoList.push(newTaskObj.data)
+   this.getAllTask()
     })
     
     return await modal.present()
     }
 
-//pridani metody pro odstraeni todo
-    delete(index: any){
-  this.todoList.splice(index,1)
+getAllTask(){
+  this.todoList = this.todosService.getAllTasks()
+console.log(this.todosService.getAllTasks()
+)
+}
+
+//pridani metody pro odstraeni todo, pridani ze servisky
+    delete(key: string){
+   this.todosService.deleteTask(key)
+   this.getAllTask()
     }
 
   ngOnInit() {

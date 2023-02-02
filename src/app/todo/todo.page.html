@@ -13,33 +13,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content  [fullscreen]="true">
   <!--iterace let itemů todolistu-->
 <ion-card  *ngFor="let item of todoList ;  let i =index" class="ion-margin" >
   <ion-card-header>
-<!--barva pisma karty dle priority, pokud vysoka=červená, pokud mala=zelena, pokud neco jiného=oranžová (stredni)-->
-    <ion-card-subtitle [style.color]="item.itemPriority === 'vysoka' ? 'red' : (item.itemPriority === 'nizka' ? 'green' : 'orange')">
+    <ion-card-subtitle >
       {{item.itemCategory}}
     </ion-card-subtitle>
 
     <ion-item>
-      <ion-icon *ngIf="item.itemPriority === 'vysoka'" color="danger" size="small" name = "ellipse"></ion-icon>
-      <ion-icon *ngIf="item.itemPriority === 'stredni'" color="warning" size="small" name = "ellipse"></ion-icon>
-      <ion-icon *ngIf="item.itemPriority === 'nizka'" color="success" size="small" name = "ellipse"></ion-icon>
-
-      <ion-label>{{item.itemName}}</ion-label>
+    
+      <ion-label>{{item.value.itemName}}</ion-label>
     </ion-item>
   </ion-card-header>
 
 
 
 <ion-row>
-  <ion-item>
-    <ion-icon name="checkmark-outline"></ion-icon>
-    <p>Hotovo</p>
-  </ion-item>
-
-  <ion-item button (click)="delete(i)">
+  <ion-item button (click)="delete(item.key)">
     <ion-icon name="trash-outline"></ion-icon>
     <p>Odstranit</p>
   </ion-item>

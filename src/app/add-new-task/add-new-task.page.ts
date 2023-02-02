@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { TodosService } from './../todos.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class AddNewTaskPage implements OnInit {
 
   taskObject:any
 
-  constructor(public modalCtrl: ModalController) { }
+  constructor(public modalCtrl: ModalController,public todoService: TodosService ) { }
 
   ngOnInit() {
   }
@@ -24,10 +25,17 @@ export class AddNewTaskPage implements OnInit {
   }
 
   //metoda pro pridani todo
-AddTask(){
+async AddTask(){
 
   this.taskObject = ({itemName: this.taskName})
   this.dismis()
+  let uid = this.taskName
+
+  if(uid){
+    await this.todoService.addTask(uid,this.taskObject)
+  } else{
+    console.log("chyba ukládání")
+  }
 
 }
 }
