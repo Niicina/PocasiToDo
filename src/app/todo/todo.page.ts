@@ -30,6 +30,11 @@ dnes: number = Date.now()
     return await modal.present()
     }
 
+//pridani metody pro odstraeni todo
+    delete(index: any){
+  this.todoList.splice(index,1)
+    }
+
   ngOnInit() {
   }
 
